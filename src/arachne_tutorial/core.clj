@@ -1,6 +1,18 @@
-(ns arachne-tutorial.core)
+(ns arachne-tutorial.core
+  (:require [arachne.log :as log]
+            [com.stuartsierra.component :as c]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+
+(defrecord Widget []
+  c/Lifecycle
+  (start [this]
+    (log/info :msg "Hello, world!")
+    this)
+  (stop [this]
+    (log/info :msg "Goodnight!")
+    this))
+
+(defn make-widget
+  "Constructor for a Widget"
+  []
+  (->Widget))

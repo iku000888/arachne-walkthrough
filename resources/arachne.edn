@@ -1,0 +1,3 @@
+[{:arachne/name :myproj/app
+  :arachne/inits [arachne-tutorial.config]
+  :arachne/dependencies [:org.arachne-framework/arachne-core]}]
