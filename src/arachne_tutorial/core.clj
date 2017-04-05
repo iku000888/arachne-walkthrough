@@ -24,4 +24,9 @@
   "Constructor for a Widget"
   [foo]
   (map->Widget {:foo foo}))
+
+(defn hello-handler
+  [req]
+  {:status 200
+   :body "Hello, world!"})
 #_(c/start (->Widget (->Foo)))
